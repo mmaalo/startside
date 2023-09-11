@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Search Bars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        
+        /* Create a container for categories */
+        .categories-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        /* Style each category container */
+        .category {
+            margin: 20px;
+            padding: 20px 10px;
+            padding-bottom: 50px;
+            background-color: #444;
+            border: 1px solid #333;
+            border-radius: 5px;
+            width: calc(90% - 40px);
+        }
+        
+        .category div {
+            margin-bottom: 8px;
+        }
+        
+        /* Media queries for different screen sizes */
+        @media screen and (min-width: 900px) {
+            .category {
+                width: calc(48% - 40px);
+            }
+        }
+        
+        @media screen and (min-width: 2000px) {
+            .category {
+                width: calc(32% - 40px);
+            }
+        }
+        
+        /* Additional styling for input and button */
+        input[type="text"] {
+            width: 70%;
+            font-size:100%;
+            padding: 10px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            -webkit-appearance: none; /* Remove default styles in WebKit browsers */
+            -moz-appearance: none; /* Remove default styles in Firefox */
+        }
+        
+        button {
+            font-size: 100%;
+            padding: 10px 15px;
+            background-color: #7f0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        /* Style the default button on hover */
+        button:hover {
+            background-color: #ff5555;
+        }
+        
+        /* Style the input when focused */
+        input[type="text"]:focus {
+            outline-color: #ff5555;
+            -moz-outline-radius: 5px; /* Firefox-specific outline radius */
+        }
+    </style>
+</head>
+<body>
+    <div class="categories-container">
+        <div class="category">
+    <h1>Websearch</h1>   
+    <div>
+        <input type="text" id="searx" placeholder="Search on Searx - All Languages">
+        <button onclick="search('http://searxng.nicfab.eu/searxng/search?q=', 'searx')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="google" placeholder="Search on Google">
+        <button onclick="search('https://www.google.com/search?q=', 'google')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="brave" placeholder="Search on Brave">
+        <button onclick="search('https://search.brave.com/search?q=', 'brave')">Search</button>
+    </div>
+    </div>
+
+    <div class="category">
+    <h1>Video</h1>
+    <div>
+        <input type="text" id="youtube" placeholder="Search on Youtube">
+        <button onclick="search('https://www.youtube.com/results?search_query=','youtube')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="odysee" placeholder="Search on Odysee">
+        <button onclick="search('https://odysee.com/$/search?q=', 'odysee')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="tmdb" placeholder="Search on TMDB">
+        <button onclick="search('https://www.themoviedb.org/search?query=', 'tmdb')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="fmoviez" placeholder="Search on fmoviez.to">
+        <button onclick="search('https://fmoviesz.to/filter?keyword=', 'fmoviez')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="aniwave" placeholder="Search on aniwave.to">
+        <button onclick="search('https://aniwave.to/filter?keyword=', 'aniwave')">Search</button>
+    </div>
+    </div>
+
+    <div class="category">
+    <h1>Person og registersøk</h1>
+    <div>
+        <input type="text" id="1881" placeholder="Search on 1881.no">
+        <button onclick="search('https://www.1881.no/?query=ffdsfdsa', '1881')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="gulesider" placeholder="Search on Gulesider.no">
+        <button onclick="search('https://kart.gulesider.no/?q=%22', 'gulesider')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="proff" placeholder="Search on Proff.no">
+        <button onclick="search('https://proff.no/bransjes%C3%B8k?q=', 'proff')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="vegvesen" placeholder="Search on Vegvesen.no kjøretøyopplysninger">
+        <button onclick="search('https://www.vegvesen.no/kjoretoy/kjop-og-salg/kjoretoyopplysninger/sjekk-kjoretoyopplysninger/?registreringsnummer=', 'vegvesen')">Search</button>
+    </div>
+    </div>
+
+    <div class="category">
+    <h1>Shopping</h1>
+    <div>
+        <input type="text" id="finn" placeholder="Search on Finn.no">
+        <button onclick="search('https://www.finn.no/globalsearchlander?q=', 'finn')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="ebay" placeholder="Search on Ebay.com">
+        <button onclick="search('https://www.ebay.com/sch/i.html?_nkw=', 'ebay')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="alibaba" placeholder="Search on Alibaba.com">
+        <button onclick="search('https://www.alibaba.com/trade/search?searchText=', 'alibaba')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="aliexpress" placeholder="Search on Aliexpress.com">
+        <button onclick="search('https://www.aliexpress.com/w/wholesale-test.html?SearchText=', 'aliexpress')">Search</button>
+    </div>
+    <div>
+        <input type="text" id="amazon" placeholder="Search on Amazon.com">
+        <button onclick="search('https://www.amazon.com/s?k=', 'amazon')">Search</button>
+    </div>
+    </div>
+    <script>
+        function search(searchURL, inputId) {
+            const inputElement = document.getElementById(inputId);
+            const query = inputElement.value.trim();
+            if (query) {
+                const url = `${searchURL}${encodeURIComponent(query)}`;
+                window.location.href = url;
+            }
+        }
+        // Add event listeners to all input elements to trigger search on Enter key press
+        const inputElements = document.querySelectorAll('input[type="text"]');
+        inputElements.forEach(input => {
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    const parentDiv = this.parentNode;
+                    const button = parentDiv.querySelector('button');
+                    button.click(); // Trigger the associated search button
+                }
+            });
+        });
+    </script>
+</body>
+</html>
