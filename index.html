@@ -28,7 +28,7 @@
             background-color: #444;
             border: 1px solid #333;
             border-radius: 5px;
-            width: calc(90% - 40px);
+            width: calc(100% - 40px);
         }
         
         .category div {
@@ -167,7 +167,7 @@
         </div>
         
         <div class="category">
-            <h1>Bøker</h1>
+            <h1>Bøker og Torrents</h1>
             <div>
                 <input type="text" id="libgen" placeholder="Search on libgen.rs">
                 <button onclick="search('http://libgen.rs/search.php?req=testSEARCHVALUE', 'libgen')">Search</button>
@@ -177,6 +177,14 @@
                 <input type="text" id="audiobookbay" placeholder="Search on audiobookbay.is">
                 <button onclick="search('https://audiobookbay.is/?s=SEARCHVALUE', 'finn')">Search</button>
             </div>
+            <div>
+                <input type="text" id="limetorrents" placeholder="Search on limetorrents.cc">
+                <button onclick="search('https://www.limetorrents.lol/search/all/SEARCHVALUE', 'limetorrents')">Search</button>
+            </div>            
+            <div>
+                <input type="text" id="kickasstorrents" placeholder="Search on kickasstorrents.to">
+                <button onclick="search('https://kickasstorrents.to/usearch/SEARCHVALUE', 'kickasstorrents')">Search</button>
+            </div>            
         </div>
 
         <div class="category">
