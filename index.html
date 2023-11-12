@@ -97,6 +97,10 @@
                 <button onclick="search('http://searxng.nicfab.eu/searxng/search?q=SEARCHVALUE&language=nb-NO&time_range=&safesearch=0&categories=general', 'searx-no')">Search</button>
             </div>
             <div>
+                <input type="text" id="startpage" placeholder="Search on Startpage">
+                <button onclick="search('https://www.startpage.com/sp/search?query=SEARCHVALUE', 'startpage')">Search</button>
+            </div>
+            <div>
                 <input type="text" id="google" placeholder="Search on Google">
                 <button onclick="search('https://www.google.com/search?q=SEARCHVALUE', 'google')">Search</button>
             </div>
@@ -170,7 +174,7 @@
             <h1>Bøker og Torrents</h1>
             <div>
                 <input type="text" id="libgen" placeholder="Search on libgen.rs">
-                <button onclick="search('http://libgen.rs/search.php?req=testSEARCHVALUE', 'libgen')">Search</button>
+                <button onclick="search('http://libgen.rs/search.php?req=SEARCHVALUE', 'libgen')">Search</button>
                 
             </div>
             <div>
